@@ -485,10 +485,17 @@ body::before {
 @media (max-width: 768px) {
     .container {
         padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .logo-icon img {
         height: 70px;
+    }
+    
+    .main-title {
+        order: 1;
     }
     
     .main-title h2 {
@@ -497,8 +504,8 @@ body::before {
     }
     
     .main-content {
-        display: flex !important;
-        flex-direction: column !important;
+        order: 2;
+        display: block !important;
         grid-template-columns: none !important;
         align-items: center;
     }
@@ -507,7 +514,6 @@ body::before {
         grid-template-columns: repeat(4, 1fr);
         gap: 8px;
         margin-top: 20px;
-        order: 1;
         max-width: 100% !important;
         margin-left: auto !important;
         margin-right: auto !important;
@@ -515,10 +521,6 @@ body::before {
     }
     
     .ambassador-details-section {
-        order: 3 !important;
-        grid-template-columns: 1fr;
-        gap: 15px;
-        margin-top: 20px;
         display: none !important;
     }
     
@@ -552,32 +554,85 @@ body::before {
     }
     
     .support-channels {
-        gap: 20px;
-        order: 2 !important;
+        order: 3;
         grid-template-columns: 1fr !important;
+        gap: 20px;
+        padding: 10px;
+        max-width: 100%;
+    }
+    
+    .support-section, .channels-section {
+        background: url('img/button1.png') no-repeat left center;
+        background-size: 70% auto;
+        backdrop-filter: blur(10px);
+        width: 100%;
+        margin: 0;
+        padding: 8px;
+        border-radius: 15px;
     }
     
     .section-title {
+        background: linear-gradient(135deg, #FFB366, #FF7F50);
+        color: white;
+        text-align: center;
+        padding: 3px 15px;
+        border-radius: 15px;
+        margin-bottom: 15px;
         font-size: 1rem;
-        padding: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 15px;
     }
     
     .support-grid, .channels-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
+        justify-items: center;
     }
     
     .support-item, .channel-item {
-        padding: 15px 10px;
+        width: 50px;
+        height: 70px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
     .support-icon, .channel-icon {
-        font-size: 1.8rem;
-        margin-bottom: 6px;
+        background: linear-gradient(135deg, #FFB366, #FF7F50);
+        width: 60px;
+        height: 60px;
+        margin-bottom: 8px;
+    }
+    
+    .support-icon i, .channel-icon i {
+        font-size: 1.4rem;
     }
     
     .support-text, .channel-text {
-        font-size: 0.7rem;
+        background: linear-gradient(135deg, #FFB366, #FF7F50);
+        font-size: 0.6rem;
+        width: 60px;
+        padding: 3px 6px;
+        border-radius: 8px;
+        min-height: 16px;
+    }
+    
+    .speed-links {
+        order: 4;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .speed-title-image {
+        text-align: center;
+        width: 100%;
     }
     
     .links-grid {
@@ -591,23 +646,12 @@ body::before {
         padding: 15px 20px;
         font-size: 1rem;
     }
-    
-    .speed-links {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .speed-title-image {
-        text-align: center;
-        width: 100%;
-    }
 }
 
 @media (max-width: 480px) {
     .container {
         padding: 12px;
+        display: block;
     }
     
     .logo-icon img {
@@ -621,35 +665,105 @@ body::before {
     }
     
     .main-content {
-        gap: 15px;
-        display: flex !important;
-        flex-direction: column !important;
+        display: block !important;
         grid-template-columns: none !important;
-        align-items: center;
     }
     
     .services-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: 6px;
         margin-top: 15px;
-        order: 1 !important;
         max-width: 100% !important;
         margin-left: auto !important;
         margin-right: auto !important;
-        justify-self: center;
+        justify-items: center;
     }
     
     .ambassador-details-section {
-        order: 3 !important;
-        gap: 15px;
-        margin-top: 15px;
         display: none !important;
     }
     
     .support-channels {
-        order: 2 !important;
-        gap: 15px;
         grid-template-columns: 1fr !important;
+        gap: 15px;
+        padding: 8px;
+        max-width: 100%;
+    }
+    
+    .support-section, .channels-section {
+        background: url('img/button1.png') no-repeat left center;
+        background-size: 54% auto;
+        backdrop-filter: blur(10px);
+        width: 100%;
+        margin: 0;
+        padding: 8px;
+        border-radius: 15px;
+    }
+    
+    .section-title {
+        background: linear-gradient(135deg, #FFB366, #FF7F50);
+        color: white;
+        text-align: center;
+        padding: 12px 8px;
+        border-radius: 6px;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        width: fit-content;
+        margin-left: 95px;
+        margin-right: auto;
+        margin-bottom: 15px;
+    }
+    
+    .support-grid, .channels-grid {
+        grid-template-columns: repeat(4, 0.0fr);
+        gap: 35px;
+        justify-items: start;
+    }
+    
+    .support-item, .channel-item {
+        width: 60px;
+        height: 80px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .support-icon, .channel-icon {
+        background: linear-gradient(135deg, #FFB366, #FF7F50);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+        margin-bottom: 5px;
+        flex-shrink: 0;
+    }
+    
+    .support-icon i, .channel-icon i {
+        font-size: 1rem;
+        color: white;
+    }
+    
+    .support-text, .channel-text {
+        background: linear-gradient(135deg, #FFB366, #FF7F50);
+        font-size: 0.45rem;
+        width: 40px;
+        padding: 2px 3px;
+        border-radius: 5px;
+        min-height: 10px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        flex-shrink: 0;
     }
     
     .service-item {
@@ -668,71 +782,16 @@ body::before {
         line-height: 1.1;
     }
     
-    .ambassador-info {
-        padding: 12px;
+    .speed-links {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     
-    .ambassador-image img {
-        width: 100px;
-        height: 95px;
-    }
-    
-    .ambassador-details h3 {
-        font-size: 0.9rem;
-        margin-bottom: 5px;
-    }
-    
-    .ambassador-details p {
-        font-size: 0.65rem;
-    }
-    
-    .download-section {
-        padding: 12px;
-    }
-    
-    .download-item {
-        padding: 6px 10px;
-        margin-bottom: 5px;
-    }
-    
-    .download-text img {
-        height: 30px;
-    }
-    
-    .contact-item {
-        padding: 6px 10px;
-        font-size: 0.65rem;
-        margin-bottom: 5px;
-    }
-    
-    .support-section, .channels-section {
-        padding: 10px;
-    }
-    
-    .section-title {
-        font-size: 0.85rem;
-        padding: 8px;
-        margin-bottom: 10px;
-    }
-    
-    .support-grid, .channels-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-    
-    .support-item, .channel-item {
-        padding: 10px 6px;
-        border-radius: 10px;
-    }
-    
-    .support-icon, .channel-icon {
-        font-size: 1.3rem;
-        margin-bottom: 4px;
-    }
-    
-    .support-text, .channel-text {
-        font-size: 0.6rem;
-        font-weight: bold;
+    .speed-title-image {
+        text-align: center;
+        width: 100%;
     }
     
     .links-grid {
@@ -754,18 +813,6 @@ body::before {
     
     .speed-title-image img {
         height: 25px;
-    }
-    
-    .speed-links {
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .speed-title-image {
-        text-align: center;
-        width: 100%;
     }
 }
 
