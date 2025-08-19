@@ -108,20 +108,18 @@ body::before {
 
 /* Main content layout */
 .main-content {
-    display: grid;
-    grid-template-columns: 600px 1fr;
-    gap: 4px;
-    margin-bottom: 2px;
-    align-items: start;
+    gap: 20px;
+    display: flex;
+    height: 310px;
+    margin-bottom: 25px;
 }
 
 /* Services grid */
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     gap: 15px;
-    max-width: 600px;
-    margin-top: 60px;
+    max-width: 550px;
+    flex-wrap: wrap;
 }
 
 .service-item {
@@ -134,7 +132,8 @@ body::before {
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
     position: relative;
-    min-height: 140px;
+    height: 140px;
+    width: 120px;
 }
 
 .service-item:hover {
@@ -168,21 +167,18 @@ body::before {
 
 /* Ambassador details section */
 .ambassador-details-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     gap: 20px;
-    align-items: start;
+    height: 100%;
 }
 
 .ambassador-info {
     align-items: center;
     gap: 15px;
-    margin-top: -15px;
-    padding: 10px;
 }
 
 .ambassador-image img {
-    width: 330px;
+    width: 285px;
     height: auto;
     border-radius: 15px;
     object-fit: contain;
@@ -197,7 +193,6 @@ body::before {
 
 .ambassador-details p {
     color: #666;
-    margin-bottom: 10px;
     font-size: 0.8rem;
 }
 
@@ -210,7 +205,6 @@ body::before {
     padding: 20px;
     border-radius: 15px;
     backdrop-filter: blur(10px);
-    margin-top: 40px;
 }
 
 .download-item {
@@ -219,19 +213,10 @@ body::before {
     justify-content: space-between;
     background: none;
     color: white;
-    padding: 10px 15px;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
-}
-
-.download-item:nth-child(2) {
-    margin-left: 20px;
-}
-
-.download-item:nth-child(2) .download-text img {
-    height: 67px;
 }
 
 .download-item:hover {
@@ -253,25 +238,26 @@ body::before {
 
 .download-text img {
     height: 60px;
-    width: auto;
+    width: 315px;
     object-fit: contain;
 }
 
 .contact-info {
     margin-top: 15px;
+    background: linear-gradient(135deg, #FFB366, #FF7F50);
+    border-radius: 8px;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
     gap: 10px;
-    background: linear-gradient(135deg, #FFB366, #FF7F50);
     color: white;
     padding: 8px 15px;
     border-radius: 8px;
     margin-bottom: 8px;
     font-weight: 500;
-    font-size: 0.8rem;
+    font-size: 20px;
 }
 
 .contact-item i {
@@ -681,7 +667,7 @@ body::before {
     }
 
     .main-title h2 {
-        font-size: 1.3rem;
+        font-size: 19px;
         margin-bottom: 15px;
         text-align: center;
     }
@@ -689,6 +675,7 @@ body::before {
     .main-content {
         display: block !important;
         grid-template-columns: none !important;
+        height: fit-content;
     }
 
     .services-grid {
@@ -700,6 +687,12 @@ body::before {
         margin-right: auto !important;
         justify-items: center;
         width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0;
+        justify-content: space-between;
     }
 
     .ambassador-details-section {
@@ -807,7 +800,7 @@ body::before {
         max-height: 120px;
         min-height: 23vw;
         border-radius: 15px;
-        width: 100%;
+        width: calc(25% - 5px);
     }
 
     .service-icon {
