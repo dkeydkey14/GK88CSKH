@@ -712,6 +712,8 @@ body::before {
         padding: 0px;
         max-width: 100%;
         margin-top: 30px;
+        display: flex;
+        flex-direction: column;
     }
 
     .support-section,
