@@ -110,6 +110,34 @@ body::before {
     letter-spacing: 1px;
 }
 
+/* Mobile contact info - ẩn trên desktop */
+.mobile-contact-info {
+    display: none;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: white;
+    padding: 8px 12px;
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 16px;
+    background: linear-gradient(135deg, #FFB366, #FF7F50);
+    border-radius: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    flex: 1;
+}
+
+.mobile-contact-item i {
+    font-size: 1rem;
+}
+
 /* Main content layout */
 .main-content {
     gap: 20px;
@@ -509,6 +537,13 @@ body::before {
         margin-bottom: 20px;
     }
 
+    /* Hiển thị mobile contact info */
+    .mobile-contact-info {
+        display: flex;
+        margin-bottom: 20px;
+        padding: 0 15px;
+    }
+
     .main-content {
         order: 2;
         display: block !important;
@@ -674,6 +709,19 @@ body::before {
         font-size: 19px;
         margin-bottom: 15px;
         text-align: center;
+    }
+
+    /* Hiển thị mobile contact info */
+    .mobile-contact-info {
+        display: flex;
+        margin-bottom: 15px;
+        padding: 0 12px;
+    }
+
+    .mobile-contact-item {
+        font-size: 14px;
+        padding: 6px 10px;
+        margin-bottom: 0;
     }
 
     .main-content {
